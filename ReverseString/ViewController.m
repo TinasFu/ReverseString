@@ -37,7 +37,7 @@
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     self.textLabel.text = self.textField.text;
-    NSLog(@"%@", self.textField.text);
+    //NSLog(@"%@", self.textField.text);
 }
 
 
@@ -70,7 +70,5 @@
     
     return reversedString;
 }
-
-
 
 @end
