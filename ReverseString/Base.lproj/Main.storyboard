@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A379b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +15,76 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="String to be reversed" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uEz-MQ-Od9">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OCv-TT-Adx">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Reverse String">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reverseStringPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tTm-CI-gq6"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please input a string:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yry-30-P8G">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Yry-30-P8G" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="20" id="7cS-B3-DFt"/>
+                            <constraint firstAttribute="centerX" secondItem="Yry-30-P8G" secondAttribute="centerX" id="CoP-5s-8i6"/>
+                            <constraint firstAttribute="centerX" secondItem="OCv-TT-Adx" secondAttribute="centerX" id="Dte-FJ-GJC"/>
+                            <constraint firstAttribute="centerX" secondItem="uEz-MQ-Od9" secondAttribute="centerX" id="eOf-BZ-lve"/>
+                            <constraint firstItem="OCv-TT-Adx" firstAttribute="top" secondItem="uEz-MQ-Od9" secondAttribute="bottom" constant="15" id="fBW-MW-uoy"/>
+                            <constraint firstItem="uEz-MQ-Od9" firstAttribute="top" secondItem="Yry-30-P8G" secondAttribute="bottom" constant="10" id="kjS-LE-YsI"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="uEz-MQ-Od9"/>
+                                <exclude reference="OCv-TT-Adx"/>
+                                <exclude reference="Yry-30-P8G"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="7cS-B3-DFt"/>
+                                <exclude reference="CoP-5s-8i6"/>
+                                <exclude reference="eOf-BZ-lve"/>
+                                <exclude reference="kjS-LE-YsI"/>
+                                <exclude reference="Dte-FJ-GJC"/>
+                                <exclude reference="fBW-MW-uoy"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="uEz-MQ-Od9"/>
+                                <include reference="OCv-TT-Adx"/>
+                                <include reference="Yry-30-P8G"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="7cS-B3-DFt"/>
+                                <include reference="CoP-5s-8i6"/>
+                                <include reference="eOf-BZ-lve"/>
+                                <include reference="kjS-LE-YsI"/>
+                                <include reference="Dte-FJ-GJC"/>
+                                <include reference="fBW-MW-uoy"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="uEz-MQ-Od9" id="dF9-OV-5XG"/>
+                        <outlet property="textLabel" destination="Yry-30-P8G" id="NDg-Kw-ars"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="409.5" y="289"/>
         </scene>
     </scenes>
 </document>
